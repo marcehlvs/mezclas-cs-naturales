@@ -50,8 +50,9 @@
 html,
 body,
 #root {
-  height: 100%;
-  overflow: hidden;
+  min-height: 100%;
+  overflow-x: hidden;
+  overflow-y: auto;
 }
 
 body {
@@ -71,22 +72,16 @@ button {
 .app {
   max-width: 720px;
   margin: 0 auto;
-  height: 100dvh;
-  padding: 14px 16px calc(10px + env(safe-area-inset-bottom, 0px));
+  min-height: 100dvh;
+  padding: 14px 16px calc(24px + env(safe-area-inset-bottom, 0px));
   display: flex;
   flex-direction: column;
-  overflow: hidden;
 }
 
-/* La única zona que scrollea: si el contenido de una pestaña no entra en
-   la pantalla, se desplaza acá adentro. El resto del layout (header, tabs)
-   queda siempre visible y la página en sí nunca hace scroll. */
+/* El viewport fluye sin límite de altura interna */
 .tab-viewport {
   flex: 1 1 auto;
-  min-height: 0;
-  overflow-y: auto;
-  -webkit-overflow-scrolling: touch;
-  scrollbar-width: thin;
+  width: 100%;
 }
 
 /* ---------- Header ---------- */
@@ -401,7 +396,8 @@ footer.note {
   text-align: center;
   color: var(--muted);
   font-size: 12px;
-  margin-top: 6px;
+  margin-top: 16px;
+  padding-bottom: 8px;
 }
 
 /* ---------- Confetti ---------- */
