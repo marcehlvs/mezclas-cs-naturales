@@ -51,6 +51,7 @@ html,
 body,
 #root {
   height: 100%;
+  overflow: hidden;
 }
 
 body {
@@ -70,11 +71,27 @@ button {
 .app {
   max-width: 720px;
   margin: 0 auto;
-  padding: 14px 16px 44px;
+  height: 100dvh;
+  padding: 14px 16px calc(10px + env(safe-area-inset-bottom, 0px));
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+/* La única zona que scrollea: si el contenido de una pestaña no entra en
+   la pantalla, se desplaza acá adentro. El resto del layout (header, tabs)
+   queda siempre visible y la página en sí nunca hace scroll. */
+.tab-viewport {
+  flex: 1 1 auto;
+  min-height: 0;
+  overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: thin;
 }
 
 /* ---------- Header ---------- */
 .app-header {
+  flex: none;
   text-align: center;
   padding: env(safe-area-inset-top, 0px) 4px 6px;
 }
@@ -104,14 +121,11 @@ button {
 
 /* ---------- Tabs ---------- */
 nav.tabs {
+  flex: none;
   display: flex;
   gap: 8px;
-  margin: 18px 0 16px;
-  position: sticky;
-  top: env(safe-area-inset-top, 0px);
-  background: var(--bg);
-  padding: 8px 0;
-  z-index: 5;
+  margin: 16px 0 14px;
+  padding: 2px 0;
 }
 nav.tabs button {
   flex: 1;

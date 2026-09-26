@@ -23,20 +23,22 @@ export default function App() {
         <p>Ciencias Naturales · 3er grado</p>
       </header>
       <Tabs active={tab} onChange={setTab} />
-      <AnimatePresence mode="wait">
-        <motion.div
-          key={tab}
-          initial={{ opacity: 0, y: 10 }}
-          animate={{ opacity: 1, y: 0 }}
-          exit={{ opacity: 0, y: -10 }}
-          transition={{ duration: 0.2 }}
-        >
-          {tab === "mezclas" && <MezclasTab />}
-          {tab === "metodos" && <MetodosTab />}
-          {tab === "juego" && <JuegoTab />}
-        </motion.div>
-      </AnimatePresence>
-      <footer className="note">Hecho con 💛 para aprender jugando</footer>
+      <div className="tab-viewport">
+        <AnimatePresence mode="wait">
+          <motion.div
+            key={tab}
+            initial={{ opacity: 0, y: 10 }}
+            animate={{ opacity: 1, y: 0 }}
+            exit={{ opacity: 0, y: -10 }}
+            transition={{ duration: 0.2 }}
+          >
+            {tab === "mezclas" && <MezclasTab />}
+            {tab === "metodos" && <MetodosTab />}
+            {tab === "juego" && <JuegoTab />}
+          </motion.div>
+        </AnimatePresence>
+        <footer className="note">Hecho con 💛 para aprender jugando</footer>
+      </div>
     </div>
   );
 }
