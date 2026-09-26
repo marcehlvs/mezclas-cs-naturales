@@ -1,0 +1,42 @@
+export const METHODS = [
+  {
+    id: "tamiza",
+    name: "Tamización",
+    icon: "🕳️",
+    desc: "Se usa un tamiz o colador para separar sólidos de distinto tamaño. Los más grandes quedan arriba y los más chicos pasan por los agujeritos.",
+    in: "Piedras grandes + arena",
+    out: "Piedras arriba, arena abajo",
+  },
+  {
+    id: "filtra",
+    name: "Filtración",
+    icon: "🧻",
+    desc: "Se hace pasar la mezcla por un filtro de papel. El líquido pasa y el sólido queda atrapado en el filtro.",
+    in: "Agua con arena",
+    out: "Agua limpia + arena en el papel",
+  },
+  {
+    id: "decanta",
+    name: "Decantación",
+    icon: "🫗",
+    desc: "Se deja reposar la mezcla. Como los líquidos o sólidos tienen distinto peso, se separan en capas y se pueden retirar por separado.",
+    in: "Agua + aceite juntos",
+    out: "Aceite arriba, agua abajo",
+  },
+  {
+    id: "evapora",
+    name: "Evaporación",
+    icon: "🔥",
+    desc: "Se calienta el líquido hasta que se evapora por completo, y el sólido que estaba disuelto queda solo, en el fondo.",
+    in: "Agua con sal disuelta",
+    out: "Vapor de agua + sal sólida",
+  },
+  {
+    id: "imanta",
+    name: "Imantación",
+    icon: "🧲",
+    desc: "Se usa un imán para atraer los materiales que tienen hierro, separándolos del resto de la mezcla.",
+    in: "Arena + limaduras de hierro",
+    out: "Hierro en el imán, arena sola",
+  },
+];
